@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+/* Custom variables */
+:root {
+  /* Primary / Accent */
+  --color-primary: #635fc7;
+  --color-primary-soft: #a8a4ff;
+
+  /* Dark / Background */
+  --color-black: #000112;
+  --color-dark-900: #20212c;
+  --color-dark-800: #2b2c37;
+  --color-dark-700: #3e3f4e;
+
+  /* Neutral */
+  --color-neutral-500: #828fa3;
+  --color-neutral-100: #e4ebfa;
+  --color-neutral-50: #f4f7fd;
+
+  /* Danger */
+  --color-danger: #ea5555;
+  --color-danger-soft: #ff9898;
+}
+
+@layer base {
+  body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-primary-soft: var(--color-primary-soft);
+  --color-black: var(--color-black);
+  --color-dark-900: var(--color-dark-900);
+  --color-dark-800: var(--color-dark-800);
+  --color-dark-700: var(--color-dark-700);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-50: var(--color-neutral-50);
+  --color-danger: var(--color-danger);
+  --color-danger-soft: var(--color-danger-soft);
+}
