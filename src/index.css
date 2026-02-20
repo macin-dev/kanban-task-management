@@ -41,3 +41,8 @@
   --color-danger: var(--color-danger);
   --color-danger-soft: var(--color-danger-soft);
 }
+
+/* Scrollbar  */
+.scrollbar {
+  scrollbar-width: none;
+}
