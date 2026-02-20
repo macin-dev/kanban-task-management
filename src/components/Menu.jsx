@@ -4,7 +4,7 @@ import { IoMdSunny } from "react-icons/io";
 import { TbLayoutBoardSplit } from "react-icons/tb";
 import Toggle from "./Toggle";
 
-export default function Menu() {
+export default function Menu({ onModal }) {
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -26,6 +26,7 @@ export default function Menu() {
       </ul>
 
       <button
+        onClick={onModal}
         type="button"
         className="text-primary flex w-full items-center gap-4 py-3 pl-5 font-bold"
       >

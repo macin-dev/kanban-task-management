@@ -4,12 +4,19 @@ import Menu from "./components/Menu";
 import BoardItem from "./components/BoardItem";
 import Board from "./components/Board";
 import BoardContainer from "./components/BoardContainer";
+import AddNewBoard from "./components/modal/AddNewBoard";
 
 export default function App() {
   const [openMenu, setOpenMenu] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   function handleMenu() {
     setOpenMenu((prevMenu) => !prevMenu);
+  }
+
+  function handleModal() {
+    setOpenModal((prevModal) => !prevModal);
+    setOpenMenu(false);
   }
 
   return (
@@ -28,10 +35,16 @@ export default function App() {
 
         {openMenu && (
           <div className="absolute top-0 flex h-full w-full items-start justify-center bg-black/50 pt-4">
-            <Menu />
+            <Menu onModal={handleModal} />
           </div>
         )}
       </main>
+
+      {openModal && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50 px-4">
+          <AddNewBoard />
+        </div>
+      )}
     </section>
   );
 }
