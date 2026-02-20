@@ -1,4 +1,6 @@
 import { IoMdClose } from "react-icons/io";
+import ButtonPrimarySmall from "../Button/ButtonPrimarySmall";
+import ButtonSecondary from "../Button/ButtonSecondary";
 
 export default function AddNewBoard() {
   return (
@@ -22,50 +24,43 @@ export default function AddNewBoard() {
           />
         </div>
 
-        <div>
-          <label className="mb-2 inline-block text-[12px] font-bold text-neutral-500">
-            Board Columns
-          </label>
+        <div className="flex flex-col gap-3">
+          <div>
+            <label className="mb-2 inline-block text-[12px] font-bold text-neutral-500">
+              Board Columns
+            </label>
 
-          <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-3 text-neutral-500">
-              <input
-                className="w-full rounded-sm border border-neutral-500/25 bg-white p-[0.4375em] text-black placeholder:text-black/25"
-                type="text"
-                placeholder="e.g. Todo"
-              />
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-3 text-neutral-500">
+                <input
+                  className="w-full rounded-sm border border-neutral-500/25 bg-white p-[0.4375em] text-black placeholder:text-black/25"
+                  type="text"
+                  placeholder="e.g. Todo"
+                />
 
-              <button type="button">
-                <IoMdClose className="text-lg" />
-              </button>
-            </div>
+                <button type="button">
+                  <IoMdClose className="text-lg" />
+                </button>
+              </div>
 
-            <div className="flex items-center gap-3 text-neutral-500">
-              <input
-                className="w-full rounded-sm border border-neutral-500/25 bg-white p-[0.4375em] text-black placeholder:text-black/25"
-                type="text"
-                placeholder="e.g. Todo"
-              />
+              <div className="flex items-center gap-3 text-neutral-500">
+                <input
+                  className="w-full rounded-sm border border-neutral-500/25 bg-white p-[0.4375em] text-black placeholder:text-black/25"
+                  type="text"
+                  placeholder="e.g. Todo"
+                />
 
-              <button type="button">
-                <IoMdClose className="text-lg" />
-              </button>
+                <button type="button">
+                  <IoMdClose className="text-lg" />
+                </button>
+              </div>
             </div>
           </div>
-          <button
-            type="button"
-            className="text-primary bg-primary/10 mt-3 w-full rounded-full py-3.5 text-[0.8125rem] leading-none font-bold"
-          >
-            &#43; Add New Column
-          </button>
+
+          <ButtonSecondary text="&#43; Add New Column" />
         </div>
 
-        <button
-          type="submit"
-          className="bg-primary rounded-full py-3.5 text-[0.8125rem] leading-none font-bold text-white"
-        >
-          &#43; Create New Board
-        </button>
+        <ButtonPrimarySmall text="&#43; Create New Board" />
       </form>
     </div>
   );
