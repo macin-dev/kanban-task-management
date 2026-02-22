@@ -25,4 +25,3 @@ dist-ssr
 
 .prettierrc
 src/components/Input
-src/components/modal/ModalLayout.jsx
