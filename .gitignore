@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 .prettierrc
+src/components/Input
+src/components/modal/ModalLayout.jsx
