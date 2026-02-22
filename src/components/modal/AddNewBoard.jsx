@@ -1,67 +1,31 @@
-import { IoMdClose } from "react-icons/io";
 import ButtonPrimarySmall from "../Button/ButtonPrimarySmall";
 import ButtonSecondary from "../Button/ButtonSecondary";
+import ModalLayout from "./ModalLayout";
+import InputText from "../Input/InputText";
+import InputOption from "../Input/InputOption";
+import InputContainer from "../Input/InputContainer";
+
+const broadColumns = ["todo", "doing", "done"];
 
 export default function AddNewBoard() {
+  const inputList = broadColumns.map((title) => (
+    <InputOption key={title} name={title} id={title} placeholder="e.g. Todo" />
+  ));
+
   return (
-    <div className="w-full max-w-120 rounded-xl bg-white p-5">
-      <h4 className="mb-4 text-lg font-bold">Add New Board</h4>
-
+    <ModalLayout title="Add New Board">
       <form className="flex flex-col gap-5">
-        <div>
-          <label
-            className="mb-2 inline-block text-[12px] font-bold text-neutral-500"
-            htmlFor="boardName"
-          >
-            Board Name
-          </label>
-          <input
-            className="w-full rounded-sm border border-neutral-500/25 bg-white p-[0.4375em] text-black placeholder:text-black/25"
-            type="text"
-            name="boardName"
-            id="boardName"
-            placeholder="e.g. Web design"
-          />
-        </div>
+        <InputContainer label="Board">
+          <InputText name="board" id="board" placeholder="e.g. Web design" />
+        </InputContainer>
 
-        <div className="flex flex-col gap-3">
-          <div>
-            <label className="mb-2 inline-block text-[12px] font-bold text-neutral-500">
-              Board Columns
-            </label>
+        <InputContainer label="Board Columns">
+          <div className="flex flex-col gap-3">{inputList}</div>
+        </InputContainer>
 
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3 text-neutral-500">
-                <input
-                  className="w-full rounded-sm border border-neutral-500/25 bg-white p-[0.4375em] text-black placeholder:text-black/25"
-                  type="text"
-                  placeholder="e.g. Todo"
-                />
-
-                <button type="button">
-                  <IoMdClose className="text-lg" />
-                </button>
-              </div>
-
-              <div className="flex items-center gap-3 text-neutral-500">
-                <input
-                  className="w-full rounded-sm border border-neutral-500/25 bg-white p-[0.4375em] text-black placeholder:text-black/25"
-                  type="text"
-                  placeholder="e.g. Todo"
-                />
-
-                <button type="button">
-                  <IoMdClose className="text-lg" />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <ButtonSecondary text="&#43; Add New Column" />
-        </div>
-
+        <ButtonSecondary text="&#43; Add New Column" />
         <ButtonPrimarySmall text="&#43; Create New Board" />
       </form>
-    </div>
+    </ModalLayout>
   );
 }

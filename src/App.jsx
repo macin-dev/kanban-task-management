@@ -41,7 +41,7 @@ export default function App() {
       </main>
 
       {openModal && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/50 px-4">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50 p-4">
           <AddNewBoard />
         </div>
       )}
